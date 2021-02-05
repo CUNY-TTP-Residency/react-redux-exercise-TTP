@@ -8,7 +8,7 @@ import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import Counter from './components/Counter';
 import counter from './reducers';
-import { INCREMENT, DECREMENT, CLEAR } from './actions';
+import { INCREMENT, DECREMENT, CLEAR, INCREMENTBY5, DECREMENTBY5 } from './actions';
 
 /* eslint-disable no-underscore-dangle */
 const store = createStore(counter,
@@ -21,6 +21,8 @@ const render = () => ReactDOM.render(
     value={store.getState()}
     onIncrement={() => store.dispatch({ type: INCREMENT })}
     onDecrement={() => store.dispatch({ type: DECREMENT })}
+    onIncrementBy5={() => store.dispatch({ type: INCREMENTBY5 })}
+    onDecrementBy5={() => store.dispatch({ type: DECREMENTBY5 })}
     onClear={() => store.dispatch({ type: CLEAR })}
   />,
   document.getElementById('root')
